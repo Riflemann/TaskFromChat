@@ -7,23 +7,41 @@ public class calculator {
     int sumConsumtion;
     int taks6;
     int taks15;
+    int input;
+    String stringInput = null;
+
 
 
     Scanner scanCal = new Scanner(System.in);
+
     void calcIncome() {
-        while (!scanCal.hasNext("exit")) {
-            inputIncome = scanCal.nextInt();
+        System.out.println("Вы выбрали ввод доходов, введите сумму");
+        inputIncome = scanCal.nextInt();
+        while (stringInput != "exit") {
             sumIncome = sumIncome + inputIncome;
             System.out.println("Введите сумму доходов или exit для завершения ввода доходов");
-            scanCal.next();
+            stringInput = scanCal.next();
+            if (stringInput == "exit") {
+
+            } else {
+                inputIncome = Integer.parseInt(stringInput);
+            }
         }
     }
     void calcConsum() {
-        while (!scanCal.hasNext("exit")) {
-            inputConsumtion = scanCal.nextInt();
+        stringInput = null;
+        System.out.println("Вы выбрали ввод расходов, введите сумму");
+        inputConsumtion = scanCal.nextInt();
+        while (stringInput != "exit") {
             sumConsumtion = sumConsumtion + inputConsumtion;
             System.out.println("Введите сумму расходов или exit для завершения ввода расходов");
-            scanCal.next();
+            stringInput = scanCal.next();
+            if (stringInput == "exit") {
+
+            } else {
+                inputConsumtion = Integer.parseInt(stringInput);
+            }
+
         }
     }
 
